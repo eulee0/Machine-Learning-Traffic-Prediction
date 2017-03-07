@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Traffic Predictions</title>
+  </head>
+  <body>
+    <h2>Machine Learning Traffic Predictions</h2>
+    <h5>All values must be integers. Corresponding integers are below:<br>
+      Road: any freeway/highway number <br>
+      Direction: 0-3 (West, South, East, North, respectively) <br>
+      Day of Week: 0-6 (Monday to Sunday) <br>
+      Time of Day: 0-24 (Military time in hours) <br>
+      Status: 0-10 (empty - traffic deadlock) <br> <br>
+      Example: [10, 2, 3, 15] => [5] refers to moderate traffic on the 10-East on Thursday at 3:00PM.
+      </h5>
+    <h3>Input New Data Record to Trigger Training</h3>
+    <form action="/training" method="post">
+      Road:<br>
+      <input type="text" name="road_id"><br>
+      Direction:<br>
+      <input type="text" name="direction"><br>
+      Day of Week:<br>
+      <input type="text" name="day"><br>
+      Time of Day:<br>
+      <input type="text" name="time"><br>
+      Status:<br>
+      <input type="text" name="status"><br>
+      <input type="submit" value="Submit"><br>
+    </form>
+
+    <h3>Input New Data Record to Predict Traffic Status</h3>
+    <form action ="/prediction" method="post">
+      Road:<br>
+      <input type="text" name="road_id"><br>
+      Direction:<br>
+      <input type="text" name="direction"><br>
+      Day of Week:<br>
+      <input type="text" name="day"><br>
+      Time of Day:<br>
+      <input type="text" name="time"><br>
+      <input type="submit" value="Submit"><br>      
+    </form>
+    <p>.</p>
+  </body>
+</html>
